@@ -1,0 +1,147 @@
+html,body,div,span,object,iframe,h1,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,code,del,dfn,em,img,q,dl,dt,dd,fieldset,form,label,legend{border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0}
+table,caption,tbody,tfoot,thead,tr,th,td{font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;margin:0;padding:0}
+body{font-family:"Lucida Grande", Verdana, Geneva, Lucida, Arial, Helvetica, sans-serif;font-size:80%;color:#222;background:#fff;margin:1em 1.5em}
+table{border-collapse:separate;border-spacing:0}
+caption,th,td{text-align:left;font-weight:400}
+table,td,th{vertical-align:middle}
+a img{border:none}
+.smallmap{border:1px solid #ccc;background-attachment:fixed;background-repeat:repeat;}
+div.olMap{z-index:0;cursor:default;margin:0!important;padding:0!important}
+div.olMapViewport{text-align:left}
+.olControlAttribution{font-size:smaller;font-family:sans-serif;font-weight:700;color:red;right:3px;bottom:4.5em;position:absolute;display:block}
+div.olControlMousePosition{bottom:0;right:3px;display:block;position:absolute;font-family:Arial;font-size:smaller}
+.olControlOverviewMapContainer{position:relative;bottom:0;left:0}
+.olControlOverviewMapElement{background-color:#D2DBEC;-moz-border-radius:.5em 0 0;padding:10px 35px}
+.olControlOverviewMapExtentRectangle{overflow:hidden;background-image:url(img/blank.gif);cursor:move;border:2px dotted red}
+.olControlOverviewMapRectReplacement{overflow:hidden;cursor:move;background-image:url(img/overview_replacement.gif);background-repeat:no-repeat;background-position:center}
+.olControlNavigationHistory{width:24px;height:24px}
+.olPopupCloseBox{background:url(img/close.gif) no-repeat;cursor:pointer}
+/*
+.olImageLoadError {background-color:transparent;opacity:0.0;filter:alpha(opacity=0)}
+.olImageLoadError {visibility: hidden}
+*/ 
+.olCursorWait{cursor:wait}
+.olDrawBox{cursor:crosshair}
+.olControlDragFeatureActive.olControlDragFeatureOver.olDragDown{cursor:0}
+.olControlLayerSwitcher{position:absolute;top:110px;left:0;width:15em;font-family:sans-serif;font-weight:700;margin-top:3px;margin-left:1px;margin-bottom:3px;font-size:smaller;color:#000;background-color:transparent}
+.olControlLayerSwitcher .layersDiv{background-color:#FFF;width:100%;height:100%;padding:5px 75px 5px 10px}
+.olControlLayerSwitcher .layersDiv .baseLbl,.olControlLayerSwitcher .layersDiv .dataLbl{margin-top:3px;margin-left:3px;margin-bottom:3px}
+.olControlLayerSwitcher .layersDiv .baseLayersDiv,.olControlLayerSwitcher .layersDiv .dataLayersDiv{padding-left:10px}
+div.olControlStatusBar{bottom:0;width:100%;display:block;position:absolute;font-family:Arial;font-size:12px;font-weight:700;color:#FFF;background-image:url(img/statusbar_bg.png);background-repeat:repeat}
+div.olControlMouseCoordinates{position:absolute;bottom:0;right:5px}
+.olControlScaleBar{bottom:15px;left:5px;font-family:sans-serif;color:#fff}
+.olControlScaleBarMarkerMajor{height:7px;width:1px;top:7px;background:#000}
+.olControlScaleBarMarkerMinor{height:4px;width:1px;top:10px;background:#000}
+.olControlScaleBarNumbersBox{width:40px;height:13px;top:21px;font-size:.7em;color:#000}
+.olControlScaleBarLabelBox{top:-2px;height:15px;font-weight:700;letter-spacing:.1em;font-size:.7em;font-variant:small-caps;color:#000}
+.olControlScaleBarLabelBoxSingleLine{height:15px;width:55px;top:5px;left:10px;font-size:1em;font-variant:small-caps}
+/*.olControlLoadingPanel{background-image:url(../default/img/BuffAnim.gif);position:relative;bottom:0px;left:0px;width:128px;height:15px;background-position:center;background-repeat:no-repeat;display:none}*/
+.olControlPanel{float:right;right:0;height:30px;width:310px}
+.olControlPanel div{display:block;width:24px;height:24px;background-color:#FFF;float:right;right:20px;margin:5px}
+.olControlPanel .olControlNavigationItemActive{width:27px;height:23px;background-image:url(../default/img/arrow_mo.jpg)}
+.olControlPanel .olControlNavigationItemInactive{width:27px;height:23px;background-image:url(../default/img/arrow.jpg)}
+.olControlPanel .olControlZoomBoxoutItemActive{width:27px;height:23px;background-image:url(../default/img/zoomout_mo1.jpg)}
+.olControlPanel .olControlZoomBoxoutItemInactive{width:27px;height:23px;background-image:url(../default/img/zoomout.jpg)}
+.olControlPanel .olControlZoomBoxItemActive{width:27px;height:23px;background-image:url(../default/img/zoomin_mo1.jpg)}
+.olControlPanel .olControlZoomBoxItemInactive{width:27px;height:23px;background-image:url(../default/img/zoomin.jpg)}
+.olControlPanel .olControlZoomToMaxExtentItemInactive{width:27px;height:23px;background-image:url(../default/img/fullextent.jpg)}
+.olControlPanel .olControlZoomInItemInactive{width:27px;height:23px;background-image:url(../default/img/fixed_zoom_in.jpg)}
+.olControlPanel .olControlZoomOutItemInactive{width:27px;height:23px;background-image:url(../default/img/fixedzoomout.jpg)}
+.olControlPanel .olControlNavigationHistoryPreviousItemActive{width:27px;height:23px;background-image:url(../default/img/back_mo.jpg)}
+.olControlPanel .olControlNavigationHistoryPreviousItemInactive{width:27px;height:23px;background-image:url(../default/img/back.jpg)}
+.olControlPanel .olControlNavigationHistoryNextItemActive{width:27px;height:23px;background-image:url(../default/img/next_mo.jpg)}
+.olControlPanel .olControlNavigationHistoryNextItemInactive{width:27px;height:23px;background-image:url(../default/img/next.jpg)}
+.olHandlerBoxZoomBox{border:2px solid red;position:absolute;background-color:#FFF;opacity:0.50;font-size:1px;filter:alpha(opacity=50)}
+.olHandlerBoxSelectFeature{border:2px solid blue;position:absolute;background-color:#FFF;opacity:0.50;font-size:1px;filter:alpha(opacity=50)}
+div.olLayerDiv,.olControlNoSelect{-moz-user-select:none}
+.olPopupContent,.olFramedCloudPopupContent{overflow:auto;padding:5px}
+.olDragDown,.olControlDragFeatureOver{cursor:move}
+.olControlScaleBarBar,.olControlScaleBarBarAlt{height:1px;top:14px;background:#000}
+.olControlLayerSwitcher .layersDiv .overLbl,.olControlLayerSwitcher .layersDiv .soilLbl,.olControlLayerSwitcher .layersDiv .wasteLbl,.olControlLayerSwitcher .layersDiv .landLbl,.olControlLayerSwitcher .layersDiv .dataLbl {margin-top: 0px;margin-left: 0px;margin-bottom: 0px;font-size: 12px;color: #4D6074;font-family: Sans-serif, Arial;font-weight: bold;padding-left: 18px;
+background: url("img/folder.png") no-repeat; cursor: pointer;}
+.olControlLayerSwitcher .layersDiv .pfzLbl {margin-top: 0px;margin-left: 22px;margin-bottom: 0px;font-size: 12px;color: #4D6074;font-weight: bold;font-family: Sans-serif, Arial;padding-left: 20px;background: url("img/folder.png") no-repeat;cursor: pointer;} 
+.olControlLayerSwitcher .layersDiv .pfzLayersDiv{padding-left:35px;font-size:11px;color:#0e519d}
+.olControlLayerSwitcher .layersDiv .dataLayersDiv{padding-left:20px;font-size:11px;color:#0e519d;}
+.olControlLayerSwitcher .layersDiv .soilLayersDiv{padding-left:20px;font-size:11px;color:#0e519d;}
+.olControlLayerSwitcher .layersDiv .wasteLayersDiv{padding-left:20px;font-size:11px;color:#0e519d;}
+.olControlLayerSwitcher .layersDiv .landLayersDiv{padding-left:15px;font-size:11px;color:#0e519d;}
+.olControlLayerSwitcher .layersDiv .overLayersDiv{padding-left:20px;font-size:11px;color:#0e519d;}
+
+#chicken_contentDiv {
+   width: auto !important;
+  height: auto !important;
+}
+
+#nav li:hover li:hover {position:relative; z-index:3200;background:lightblue; color:blue;}
+#nav li:hover li:hover  ul.sub2
+{left:175px; top:-6px; background: lightyellow; border:6px solid #2D2D2D; white-space:nowrap; width:175px; height:auto; z-index:3300;}
+#nav li:hover li:hover  ul.sub2 li
+{display:block; height:20px; position:relative; float:left;  font-weight:normal;}
+#nav li:hover li:hover  ul.sub2 li a
+{display:block;font-size:12px;height:18px; width:175px; line-height:18px; color:#000; text-decoration:none;border-top:2px solid #bbd37e;}
+#nav li:hover li:hover  ul.sub2 li a:hover 
+{background:lightblue; color:blue; border-top:2px solid #bbd37e;}
+
+#mask {
+	display: none;
+	background: #000; 
+	position: fixed; left: 0; top: 0; 
+	_position:absolute;
+	 _top:expression(eval(document.body.scrollTop));
+	width: 100%; height: 100%;
+	opacity: 0.7;
+	z-index: 5000;
+}
+
+/* You can customize to your needs  */
+.landing-popup{
+	display:none;
+	background: #fff;
+	padding: 2px; 	
+	border: 1px solid #ddd;
+	float: left;
+	font-size: 1.2em;
+	position: fixed;
+	_position:absolute;
+	top: 50%; left: 50%;
+	_top:expression(eval(document.body.scrollTop)+150px);
+	z-index: 99999;
+	box-shadow: 0px 0px 20px #999; /* CSS3 */
+        -moz-box-shadow: 0px 0px 20px #999; /* Firefox */
+        -webkit-box-shadow: 0px 0px 20px #999; /* Safari, Chrome */
+	border-radius:3px 3px 3px 3px;
+        -moz-border-radius: 3px; /* Firefox */
+        -webkit-border-radius: 3px; /* Safari, Chrome */
+}
+#mask {
+	display: none;
+	background: #000; 
+	position: fixed; left: 0; top: 0; 
+	_position:absolute;
+	 _top:expression(eval(document.body.scrollTop));
+	width: 100%; height: 100%;
+	opacity: 0.5;
+	z-index: 5000;
+}
+
+/* You can customize to your needs  */
+.landing-popup{
+	display:none;
+	background: #fff;
+	padding: 2px; 	
+	border: 1px solid #ddd;
+	float: left;
+	font-size: 1.2em;
+	position: fixed;
+	_position:absolute;
+	top: 50%; left: 50%;
+	_top:expression(eval(document.body.scrollTop)+150px);
+	z-index: 99999;
+	box-shadow: 0px 0px 20px #999; /* CSS3 */
+        -moz-box-shadow: 0px 0px 20px #999; /* Firefox */
+        -webkit-box-shadow: 0px 0px 20px #999; /* Safari, Chrome */
+	border-radius:3px 3px 3px 3px;
+        -moz-border-radius: 3px; /* Firefox */
+        -webkit-border-radius: 3px; /* Safari, Chrome */
+}
+
