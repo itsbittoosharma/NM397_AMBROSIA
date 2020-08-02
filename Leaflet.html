@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,8 +18,18 @@
 </head>
 <body>
 
-<a href="#" onclick="onSpeechRecognitionEvents(); recognition.start(); return false;"><img src="mic.png" width=55px height=50px alt="Turn on Speech Recognition"></a><b> <h2>Click on the mic button to turn on Voice Commands to Navigate Map
-</b></h4>
+<a href="#" onclick="onSpeechRecognitionEvents(); recognition.start(); return false;">
+	
+	 <style>
+      .img-container {
+        text-align: center;
+        display: block;
+      }
+    </style>
+<span class="img-container"> <!-- Inline parent element -->
+      <img src="mic.png" alt="" width="65" height="60">
+    </span>
+</a>
 <div id="mapid" style="width: 1500px; height: 650px;"></div>
 <script>
 
@@ -83,48 +92,343 @@ const commands =
 {
   //"search": term => (setTimeout(() => window.open('http://google.com/search?q='+term), 0.100)),
   "zoom": destination => zoomTo(destination),
- /* "up": destination => panTo(destination),
-  "down": destination => panTo(destination),
-  "left": destination => panTo(destination),
-  "right": destination => panTo(destination), */
+  "zoomin": destination => zoomT(destination),
+  "zoom in": destination => zoomT(destination),
+  "zoomout": destination => zoomN(destination),
+  "zoom out": destination => zoomN(destination),
+ "up": destination => hind(destination),
+  "down": destination => hind1(destination),
+  "left": destination => hind3(destination),
+  "right": destination => hind2(destination), 
   go: destination => panTo(destination),
   "drag": destination => panTo(destination), 
   "move": destination => panTo(destination),
   "goto": destination => goto1(destination),
-  "go to": destination => goto1(destination)
-  
+  "dishoom": destination => zoomTo(destination),
+  "go to": destination => goto1(destination),
+  "navigate to": destination => goto1(destination),
+    "niche": destination => hind(destination),
+    "upar": destination => hind1(destination),
+    "dai": destination => hind2(destination),
+    "bye": destination => hind3(destination)
   //Add more commands here in same syntax :)
 };
 
 
 function zoomTo(destination)   
 { 
-    if(destination=="in")
-{
-
-//var e=document.getElementsByClassName("leaflet-control-zoom-in");
+	//var e=document.getElementsByClassName("leaflet-control-zoom-out");
 //e[0].click();
-var z=mymap.getZoom();
+	var z=mymap.getZoom();
 //console.log(z);
 console.log("abc",mymap.getZoom());
-mymap.setZoom(z+1);
-
-
+    if(destination=="in")
+{
+	mymap.setZoom(z+1);
 }
 else if(destination=="out")
 {
- //var e=document.getElementsByClassName("leaflet-control-zoom-out");
+    mymap.setZoom(z-1);
+}
+
+}
+function zoomT(destination)   
+{ 
+	//var e=document.getElementsByClassName("leaflet-control-zoom-out");
 //e[0].click();
-var z=mymap.getZoom();
+	var z=mymap.getZoom();
 //console.log(z);
 console.log("abc",mymap.getZoom());
-mymap.setZoom(z-1);
+    
+	mymap.setZoom(z+1);
 
 }
+
+function zoomN(destination)   
+{ 
+	//var e=document.getElementsByClassName("leaflet-control-zoom-out");
+//e[0].click();
+	var z=mymap.getZoom();
+//console.log(z);
+console.log("abc",mymap.getZoom());
+    
+	mymap.setZoom(z-1);
+
 }
 
 
+function hind3(destination)
+{
 
+var cntr=mymap.getCenter();
+console.log(""+cntr);
+console.log(cntr.lng);
+var k=cntr.lng;
+var z1=mymap.getZoom();
+
+if(z1==13)
+{cntr.lng=cntr.lng-(3.5/k);}
+
+if(z1==14)
+{cntr.lng=cntr.lng-(2.1/k);}
+ 
+if(z1==15)
+{cntr.lng=cntr.lng-(1/k);}
+
+if(z1==16)
+{cntr.lng=cntr.lng-(0.7/k);}
+
+if(z1==17)
+{cntr.lng=cntr.lng-(0.31/k);}
+
+if(z1==18)
+{cntr.lng=cntr.lng-(0.15/k);}
+ 
+if(z1==1)
+{cntr.lng=cntr.lng-(7500/k);}
+
+if(z1==2)
+{cntr.lng=cntr.lng-(4000/k);}
+ 
+if(z1==3)
+{cntr.lng=cntr.lng-(2000/k);}
+
+if(z1==4)
+{cntr.lng=cntr.lng-(1100/k);}
+
+if(z1==5)
+{cntr.lng=cntr.lng-(750/k);}
+
+if(z1==6)
+{cntr.lng=cntr.lng-(350/k);}
+ 
+if(z1==7)
+{cntr.lng=cntr.lng-(190/k);}
+
+if(z1==8)
+{cntr.lng=cntr.lng-(90/k);}
+ 
+if(z1==9)
+{cntr.lng=cntr.lng-(45/k);}
+
+if(z1==10)
+{cntr.lng=cntr.lng-(20/k);}
+
+if(z1==11)
+{cntr.lng=cntr.lng-(14/k);}
+
+if(z1==12)
+{cntr.lng=cntr.lng-(7.5/k);}
+ 
+
+mymap.panTo(new L.LatLng(cntr.lat,cntr.lng));
+
+}
+function hind(destination)   
+{ 
+   	
+var cntr=mymap.getCenter();
+console.log(""+cntr);
+console.log(cntr.lat);
+var k=cntr.lat;
+var z1=mymap.getZoom();
+
+if(z1==13)
+{cntr.lat=cntr.lat-(1/k);}
+
+if(z1==14)
+{cntr.lat=cntr.lat-(0.7/k);}
+ 
+if(z1==15)
+{cntr.lat=cntr.lat-(0.34/k);}
+
+if(z1==16)
+{cntr.lat=cntr.lat-(0.15/k);}
+
+if(z1==17)
+{cntr.lat=cntr.lat-(0.07/k);}
+
+if(z1==18)
+{cntr.lat=cntr.lat-(0.03/k);}
+ 
+if(z1==1)
+{cntr.lat=cntr.lat-(1600/k);}
+
+if(z1==2)
+{cntr.lat=cntr.lat-(1100/k);}
+ 
+if(z1==3)
+{cntr.lat=cntr.lat-(700/k);}
+
+if(z1==4)
+{cntr.lat=cntr.lat-(400/k);}
+
+if(z1==5)
+{cntr.lat=cntr.lat-(180/k);}
+
+if(z1==6)
+{cntr.lat=cntr.lat-(80/k);}
+ 
+if(z1==7)
+{cntr.lat=cntr.lat-(60/k);}
+
+if(z1==8)
+{cntr.lat=cntr.lat-(25/k);}
+ 
+if(z1==9)
+{cntr.lat=cntr.lat-(12/k);}
+
+if(z1==10)
+{cntr.lat=cntr.lat-(5.8/k);}
+
+if(z1==11)
+{cntr.lat=cntr.lat-(3.5/k);}
+
+if(z1==12)
+{cntr.lat=cntr.lat-(1.5/k);}
+ 
+
+mymap.panTo(new L.LatLng(cntr.lat,cntr.lng));
+
+
+}
+
+function hind1(destination)   
+{ 
+   
+var cntr=mymap.getCenter();
+console.log(""+cntr);
+console.log(cntr.lat);
+var k=cntr.lat;
+var z1=mymap.getZoom();
+
+if(z1==13)
+{cntr.lat=cntr.lat+(1/k);}
+
+if(z1==14)
+{cntr.lat=cntr.lat+(0.7/k);}
+ 
+if(z1==15)
+{cntr.lat=cntr.lat+(0.34/k);}
+
+if(z1==16)
+{cntr.lat=cntr.lat+(0.15/k);}
+
+if(z1==17)
+{cntr.lat=cntr.lat+(0.07/k);}
+
+if(z1==18)
+{cntr.lat=cntr.lat+(0.03/k);}
+ 
+if(z1==1)
+{cntr.lat=cntr.lat+(1600/k);}
+
+if(z1==2)
+{cntr.lat=cntr.lat+(1100/k);}
+ 
+if(z1==3)
+{cntr.lat=cntr.lat+(700/k);}
+
+if(z1==4)
+{cntr.lat=cntr.lat+(400/k);}
+
+if(z1==5)
+{cntr.lat=cntr.lat+(180/k);}
+
+if(z1==6)
+{cntr.lat=cntr.lat+(80/k);}
+ 
+if(z1==7)
+{cntr.lat=cntr.lat+(60/k);}
+
+if(z1==8)
+{cntr.lat=cntr.lat+(25/k);}
+ 
+if(z1==9)
+{cntr.lat=cntr.lat+(12/k);}
+
+if(z1==10)
+{cntr.lat=cntr.lat+(5.8/k);}
+
+if(z1==11)
+{cntr.lat=cntr.lat+(3.5/k);}
+
+if(z1==12)
+{cntr.lat=cntr.lat+(1.5/k);}
+ 
+
+mymap.panTo(new L.LatLng(cntr.lat,cntr.lng));
+
+}
+
+function hind2(destination) 
+
+{
+
+var cntr=mymap.getCenter();
+console.log(""+cntr);
+console.log(cntr.lng);
+var k=cntr.lng;
+var z1=mymap.getZoom();
+
+if(z1==13)
+{cntr.lng=cntr.lng+(3.5/k);}
+
+if(z1==14)
+{cntr.lng=cntr.lng+(2.1/k);}
+ 
+if(z1==15)
+{cntr.lng=cntr.lng+(1/k);}
+
+if(z1==16)
+{cntr.lng=cntr.lng+(0.7/k);}
+
+if(z1==17)
+{cntr.lng=cntr.lng+(0.31/k);}
+
+if(z1==18)
+{cntr.lng=cntr.lng+(0.15/k);}
+ 
+if(z1==1)
+{cntr.lng=cntr.lng+(7500/k);}
+
+if(z1==2)
+{cntr.lng=cntr.lng+(4000/k);}
+ 
+if(z1==3)
+{cntr.lng=cntr.lng+(2000/k);}
+
+if(z1==4)
+{cntr.lng=cntr.lng+(1100/k);}
+
+if(z1==5)
+{cntr.lng=cntr.lng+(750/k);}
+
+if(z1==6)
+{cntr.lng=cntr.lng+(350/k);}
+ 
+if(z1==7)
+{cntr.lng=cntr.lng+(190/k);}
+
+if(z1==8)
+{cntr.lng=cntr.lng+(90/k);}
+ 
+if(z1==9)
+{cntr.lng=cntr.lng+(45/k);}
+
+if(z1==10)
+{cntr.lng=cntr.lng+(20/k);}
+
+if(z1==11)
+{cntr.lng=cntr.lng+(14/k);}
+
+if(z1==12)
+{cntr.lng=cntr.lng+(7.5/k);}
+ 
+
+mymap.panTo(new L.LatLng(cntr.lat,cntr.lng));
+
+}
 
 function panTo(destination)   
 { 
@@ -197,6 +501,9 @@ mymap.panTo(new L.LatLng(cntr.lat,cntr.lng));
 }
 
 
+
+
+
 if(destination=="down")
 {
 
@@ -261,7 +568,7 @@ if(z1==12)
 {cntr.lat=cntr.lat-(1.5/k);}
  
 
-mymap.panTo(new L.LatLng(cntr.lat,cntr.lng));
+mymap.hindinavdir(new L.LatLng(cntr.lat,cntr.lng));
 
 }
 
@@ -406,10 +713,268 @@ mymap.panTo(new L.LatLng(cntr.lat,cntr.lng));
 
 }
 
+function hind3(destination)
+{
 
+
+var cntr=mymap.getCenter();
+console.log(""+cntr);
+console.log(cntr.lng);
+var k=cntr.lng;
+var z1=mymap.getZoom();
+
+if(z1==13)
+{cntr.lng=cntr.lng-(3.5/k);}
+
+if(z1==14)
+{cntr.lng=cntr.lng-(2.1/k);}
+ 
+if(z1==15)
+{cntr.lng=cntr.lng-(1/k);}
+
+if(z1==16)
+{cntr.lng=cntr.lng-(0.7/k);}
+
+if(z1==17)
+{cntr.lng=cntr.lng-(0.31/k);}
+
+if(z1==18)
+{cntr.lng=cntr.lng-(0.15/k);}
+ 
+if(z1==1)
+{cntr.lng=cntr.lng-(7500/k);}
+
+if(z1==2)
+{cntr.lng=cntr.lng-(4000/k);}
+ 
+if(z1==3)
+{cntr.lng=cntr.lng-(2000/k);}
+
+if(z1==4)
+{cntr.lng=cntr.lng-(1100/k);}
+
+if(z1==5)
+{cntr.lng=cntr.lng-(750/k);}
+
+if(z1==6)
+{cntr.lng=cntr.lng-(350/k);}
+ 
+if(z1==7)
+{cntr.lng=cntr.lng-(190/k);}
+
+if(z1==8)
+{cntr.lng=cntr.lng-(90/k);}
+ 
+if(z1==9)
+{cntr.lng=cntr.lng-(45/k);}
+
+if(z1==10)
+{cntr.lng=cntr.lng-(20/k);}
+
+if(z1==11)
+{cntr.lng=cntr.lng-(14/k);}
+
+if(z1==12)
+{cntr.lng=cntr.lng-(7.5/k);}
+ 
+
+mymap.panTo(new L.LatLng(cntr.lat,cntr.lng));
+
+}
 
 function goto1(destination)   
 { 
+
+      if(destination=="surat")
+{
+
+
+mymap.setView([21.1959, 72.8302], 13);
+        
+        L.marker([21.1959, 72.8302]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+     if(destination=="indore")
+{
+
+
+mymap.setView([22.7177, 75.8585], 13);
+        
+        L.marker([22.7177, 75.8585]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+     if(destination=="coimbatore")
+{
+
+
+mymap.setView([11.0055, 76.9661], 13);
+        
+        L.marker([11.0055, 76.9661]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+     if(destination=="ludhiana")
+{
+
+
+mymap.setView([30.9120, 75.8537], 13);
+        
+        L.marker([30.9120, 75.8537]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+     if(destination=="agra")
+{
+
+
+mymap.setView([27.1879, 78.0039], 13);
+        
+        L.marker([27.1879, 78.0039]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+     if(destination=="vishakhapatnam")
+{
+
+
+mymap.setView([17.7040, 83.2976], 13);
+        
+        L.marker([17.7040, 83.2976]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+     if(destination=="kochi")
+{
+
+
+mymap.setView([9.9477, 76.2538], 13);
+        
+        L.marker([9.9477, 76.2538]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+     if(destination=="varanasi")
+{
+
+
+mymap.setView([25.3177, 83.0058], 13);
+        
+        L.marker([25.3177, 83.0058]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+     if(destination=="jamshedpur")
+{
+
+
+mymap.setView([22.8027, 86.1854], 13);
+        
+        L.marker([22.8027, 86.1854]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+     if(destination=="rajkot")
+{
+
+
+mymap.setView([22.2916, 70.7932], 13);
+        
+        L.marker([22.2916, 70.7932]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+     if(destination=="srinagar")
+{
+
+
+mymap.setView([34.0856, 74.8055], 13);
+        
+        L.marker([34.0856, 74.8055]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+     if(destination=="guwahati")
+{
+
+
+mymap.setView([26.1760, 91.7629], 13);
+        
+        L.marker([26.1760, 91.7629]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+     if(destination=="kota")
+{
+
+
+mymap.setView([25.1825, 75.8390], 13);
+        
+        L.marker([25.1825, 75.8390]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="patiala")
+{
+
+
+mymap.setView([30.3362, 76.3921], 13);
+        
+        L.marker([30.3362, 76.3921]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="pathankot")
+{
+
+
+mymap.setView([32.2748, 75.6528], 13);
+        
+        L.marker([32.2748, 75.6528]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="puducherry")
+{
+
+
+mymap.setView([11.9338, 79.8297], 13);
+        
+        L.marker([11.9338, 79.8297]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+   if(destination=="puri")
+{
+
+
+mymap.setView([19.7982, 85.8249], 13);
+        
+        L.marker([19.7982, 85.8249]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="gurgaon")
+{
+
+
+mymap.setView([28.4601, 77.0263], 13);
+        
+        L.marker([28.4601, 77.0263]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="panaji")
+{
+
+
+mymap.setView([15.4982, 73.8245], 13);
+        
+        L.marker([15.4982, 73.8245]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="calicut")
+{
+
+
+mymap.setView([11.2480, 75.7804], 13);
+        
+        L.marker([11.2480, 75.7804]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="kanpur")
+{
+
+
+mymap.setView([26.4499, 80.3319], 13);
+        
+        L.marker([26.4499, 80.3319]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+
     if(destination=="patna")
 {
 
@@ -562,13 +1127,8 @@ console.log("utkarsh::",transcript);
 
 
 </body>
+
 </html>
-
-
-
-
-
-
 
 
 
