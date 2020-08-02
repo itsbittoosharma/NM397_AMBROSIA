@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,8 +19,8 @@
 </head>
 <body>
 
-
-
+<a href="#" onclick="onSpeechRecognitionEvents(); recognition.start(); return false;"><img src="mic.png" width=55px height=50px alt="Turn on Speech Recognition"></a><b> <h2>Click on the mic button to turn on Voice Commands to Navigate Map
+</b></h4>
 <div id="mapid" style="width: 1500px; height: 650px;"></div>
 <script>
 
@@ -89,6 +90,8 @@ const commands =
   go: destination => panTo(destination),
   "drag": destination => panTo(destination), 
   "move": destination => panTo(destination),
+  "goto": destination => goto1(destination),
+  "go to": destination => goto1(destination)
   
   //Add more commands here in same syntax :)
 };
@@ -405,6 +408,109 @@ mymap.panTo(new L.LatLng(cntr.lat,cntr.lng));
 
 
 
+function goto1(destination)   
+{ 
+    if(destination=="patna")
+{
+
+
+mymap.setView([25.5941, 85.1376], 13);
+        
+        L.marker([25.5941, 85.1376]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="goa")
+{
+
+
+mymap.setView([15.2993, 74.1240], 7);
+        
+        L.marker([15.2993, 74.1240]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="gujarat")
+{
+
+
+mymap.setView([22.2587, 71.1924], 7);
+        
+        L.marker([22.2587, 71.1924]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="punjab")
+{
+
+
+mymap.setView([31.1471, 75.3412], 7);
+        
+        L.marker([31.1471, 75.3412]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="uttar pradesh")
+{
+
+
+mymap.setView([26.8467, 80.9462], 7);
+        
+        L.marker([26.8467, 80.9462]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="rajasthan")
+{
+
+
+mymap.setView([27.0238, 74.2179], 7);
+        
+        L.marker([27.0238, 74.2179]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="gandhinagar")
+{
+
+
+mymap.setView([23.2156, 72.6369], 13);
+        
+        L.marker([23.2156, 72.6369]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="mumbai")
+{
+
+
+mymap.setView([19.0760, 72.8777], 13);
+        
+        L.marker([19.0760, 72.8777]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    if(destination=="jaipur")
+{
+
+
+mymap.setView([26.9124, 75.7873], 13);
+        
+        L.marker([26.9124, 75.7873]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
+    
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function onSpeechRecognitionEvents() {
   recognition.addEventListener("result", event =>
  {
@@ -429,10 +535,34 @@ console.log("utkarsh::",transcript);
 }
 
 
-//if (SpeechRecognition) {
-  onSpeechRecognitionEvents();
-  recognition.start();
+//if(#tt) {
+  
 //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
 
 
 
