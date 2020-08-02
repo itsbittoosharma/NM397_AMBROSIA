@@ -86,8 +86,9 @@ const commands =
   "down": destination => panTo(destination),
   "left": destination => panTo(destination),
   "right": destination => panTo(destination), */
-  "go": destination => panTo(destination),
+  go: destination => panTo(destination),
   "drag": destination => panTo(destination), 
+  "move": destination => panTo(destination),
   
   //Add more commands here in same syntax :)
 };
@@ -118,6 +119,9 @@ mymap.setZoom(z-1);
 
 }
 }
+
+
+
 
 function panTo(destination)   
 { 
@@ -230,7 +234,7 @@ if(z1==4)
 {cntr.lat=cntr.lat-(400/k);}
 
 if(z1==5)
-{cntr.lat=cntr.lat+(180/k);}
+{cntr.lat=cntr.lat-(180/k);}
 
 if(z1==6)
 {cntr.lat=cntr.lat-(80/k);}
@@ -454,3 +458,4 @@ console.log("utkarsh::",transcript);
 
 </body>
 </html>
+
