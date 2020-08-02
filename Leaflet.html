@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Quick Start - Leaflet</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+
+	
+</head>
+<body>
+
+
+
+<div id="mapid" style="width: 1500px; height: 650px;"></div>
+<script>
+
+	var mymap = L.map('mapid').setView([28.613459, 77.211914], 13);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+	}).addTo(mymap);
+
+	L.marker([28.613459, 77.211914]).addTo(mymap)
+		.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+
+	L.circle([51.508, -0.11], 500, {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.5
+	}).addTo(mymap).bindPopup("I am a circle.");
+
+	L.polygon([
+		[51.509, -0.08],
+		[51.503, -0.06],
+		[51.51, -0.047]
+	]).addTo(mymap).bindPopup("I am a polygon.");
+
+
+	var popup = L.popup();
+
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent("You clicked the map at " + e.latlng.toString())
+			.openOn(mymap);
+	}
+
+	mymap.on('click', onMapClick);
+
+
+
+
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
+var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent
+var recognition = new SpeechRecognition();
+var speechRecognitionList = new SpeechGrammarList();
+
+recognition.grammars = speechRecognitionList;
+recognition.continuous = true;
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+
+
+const commands = 
+{
+  //"search": term => (setTimeout(() => window.open('http://google.com/search?q='+term), 0.100)),
+  "zoom": destination => zoomTo(destination),
+ /* "up": destination => panTo(destination),
+  "down": destination => panTo(destination),
+  "left": destination => panTo(destination),
+  "right": destination => panTo(destination), */
+  "go": destination => panTo(destination),
+  "drag": destination => panTo(destination), 
+  
+  //Add more commands here in same syntax :)
+};
+
+
+function zoomTo(destination)   
+{ 
+    if(destination=="in")
+{
+
+//var e=document.getElementsByClassName("leaflet-control-zoom-in");
+//e[0].click();
+var z=mymap.getZoom();
+//console.log(z);
+console.log("abc",mymap.getZoom());
+mymap.setZoom(z+1);
+
+
+}
+else if(destination=="out")
+{
+ //var e=document.getElementsByClassName("leaflet-control-zoom-out");
+//e[0].click();
+var z=mymap.getZoom();
+//console.log(z);
+console.log("abc",mymap.getZoom());
+mymap.setZoom(z-1);
+
+}
+}
+
+function panTo(destination)   
+{ 
+    if(destination=="up")
+{
+
+var cntr=mymap.getCenter();
+console.log(""+cntr);
+console.log(cntr.lat);
+var k=cntr.lat;
+var z1=mymap.getZoom();
+
+if(z1==13)
+{cntr.lat=cntr.lat+(1/k);}
+
+if(z1==14)
+{cntr.lat=cntr.lat+(0.7/k);}
+ 
+if(z1==15)
+{cntr.lat=cntr.lat+(0.34/k);}
+
+if(z1==16)
+{cntr.lat=cntr.lat+(0.15/k);}
+
+if(z1==17)
+{cntr.lat=cntr.lat+(0.07/k);}
+
+if(z1==18)
+{cntr.lat=cntr.lat+(0.03/k);}
+ 
+if(z1==1)
+{cntr.lat=cntr.lat+(1600/k);}
+
+if(z1==2)
+{cntr.lat=cntr.lat+(1100/k);}
+ 
+if(z1==3)
+{cntr.lat=cntr.lat+(700/k);}
+
+if(z1==4)
+{cntr.lat=cntr.lat+(400/k);}
+
+if(z1==5)
+{cntr.lat=cntr.lat+(180/k);}
+
+if(z1==6)
+{cntr.lat=cntr.lat+(80/k);}
+ 
+if(z1==7)
+{cntr.lat=cntr.lat+(60/k);}
+
+if(z1==8)
+{cntr.lat=cntr.lat+(25/k);}
+ 
+if(z1==9)
+{cntr.lat=cntr.lat+(12/k);}
+
+if(z1==10)
+{cntr.lat=cntr.lat+(5.8/k);}
+
+if(z1==11)
+{cntr.lat=cntr.lat+(3.5/k);}
+
+if(z1==12)
+{cntr.lat=cntr.lat+(1.5/k);}
+ 
+
+mymap.panTo(new L.LatLng(cntr.lat,cntr.lng));
+
+}
+}
+
+
+
+function onSpeechRecognitionEvents() {
+  recognition.addEventListener("result", event =>
+ {
+    if (typeof event.results === "undefined") return;
+    const transcript = event.results[event.results.length - 1][0].transcript
+      .toLowerCase()
+      .trim();
+console.log("utkarsh::",transcript);
+    for (let command in commands) {
+      if (transcript.indexOf(command) === 0) {
+        if (transcript[command.length] === undefined) {
+          commands[command]();
+        } else {
+          const param = transcript
+            .substring(command.length, transcript.length)
+            .trim();
+          commands[command](param);
+        }
+      }
+    }
+ } );
+}
+
+
+//if (SpeechRecognition) {
+  onSpeechRecognitionEvents();
+  recognition.start();
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
