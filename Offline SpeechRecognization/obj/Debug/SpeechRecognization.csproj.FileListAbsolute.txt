@@ -1,0 +1,21 @@
+G:\aspproject\SpeechRecognization\bin\Debug\SpeechRecognization.exe.config
+G:\aspproject\SpeechRecognization\obj\Debug\SpeechRecognization.csprojResolveAssemblyReference.cache
+G:\aspproject\SpeechRecognization\obj\Debug\SpeechRecognization.Form1.resources
+G:\aspproject\SpeechRecognization\obj\Debug\SpeechRecognization.login.resources
+G:\aspproject\SpeechRecognization\obj\Debug\SpeechRecognization.Properties.Resources.resources
+G:\aspproject\SpeechRecognization\obj\Debug\SpeechRecognization.csproj.GenerateResource.Cache
+G:\aspproject\SpeechRecognization\bin\Debug\SpeechRecognization.exe
+G:\aspproject\SpeechRecognization\bin\Debug\SpeechRecognization.pdb
+G:\aspproject\SpeechRecognization\obj\Debug\SpeechRecognization.exe
+G:\aspproject\SpeechRecognization\obj\Debug\SpeechRecognization.pdb
+C:\Users\Utkarsh Upadhyay\OneDrive\Desktop\SpeechRecognization\bin\Debug\SpeechRecognization.exe.config
+C:\Users\Utkarsh Upadhyay\OneDrive\Desktop\SpeechRecognization\bin\Debug\SpeechRecognization.exe
+C:\Users\Utkarsh Upadhyay\OneDrive\Desktop\SpeechRecognization\bin\Debug\SpeechRecognization.pdb
+C:\Users\Utkarsh Upadhyay\OneDrive\Desktop\SpeechRecognization\obj\Debug\SpeechRecognization.csprojAssemblyReference.cache
+C:\Users\Utkarsh Upadhyay\OneDrive\Desktop\SpeechRecognization\obj\Debug\SpeechRecognization.Form1.resources
+C:\Users\Utkarsh Upadhyay\OneDrive\Desktop\SpeechRecognization\obj\Debug\SpeechRecognization.login.resources
+C:\Users\Utkarsh Upadhyay\OneDrive\Desktop\SpeechRecognization\obj\Debug\SpeechRecognization.Properties.Resources.resources
+C:\Users\Utkarsh Upadhyay\OneDrive\Desktop\SpeechRecognization\obj\Debug\SpeechRecognization.csproj.GenerateResource.cache
+C:\Users\Utkarsh Upadhyay\OneDrive\Desktop\SpeechRecognization\obj\Debug\SpeechRecognization.csproj.CoreCompileInputs.cache
+C:\Users\Utkarsh Upadhyay\OneDrive\Desktop\SpeechRecognization\obj\Debug\SpeechRecognization.exe
+C:\Users\Utkarsh Upadhyay\OneDrive\Desktop\SpeechRecognization\obj\Debug\SpeechRecognization.pdb
