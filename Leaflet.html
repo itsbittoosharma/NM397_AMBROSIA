@@ -1058,7 +1058,15 @@ mymap.setView([26.9124, 75.7873], 13);
 }
     
 
+if(destination=="madhya pradesh")
+{
 
+
+mymap.setView([22.9734, 78.6569], 7);
+        
+        L.marker([22.9734, 78.6569]).addTo(mymap)
+		.bindPopup("<b>Here is</b><br />"+destination.toUpperCase()).openPopup();
+}
 
 
 }
